@@ -59,7 +59,7 @@ By configuring evaluation rules, certain metrics on a certain column of a previs
   <ol>
    <li>String: e.g. "LA1", should be encapsulated with "". </li>
    <li>Numeric values: it'll be better to written as a list containing only one element e.g. [0], [30000]</li>
-   <li>Range: the way to evaluate with a range is, if the derived value is not within the range, the evaluation will fail
+   <li>Range: evaluate whether values is within a range. The way to evaluate with a range is, if the derived value is not within the range, the evaluation will fail
     <ul>
      <li>with "=" means also contains equal case
      <li>smaller than: e.g. range(,10) </li>
@@ -68,7 +68,14 @@ By configuring evaluation rules, certain metrics on a certain column of a previs
      <li>larger or equal than: e.g. range(=10,) </li>
      <li>within a range: e.g. range(10,100), range(=10,=100)
     </ul>
-   <li>List: e.g. ["LA1", "PBE1"], the way to evaluate with a list is </li>
+   <li>List: evaluate whether values is in a list e.g. ["LA1", "PBE1"]. The way to evaluate with a list is if the derived values are all in the list, the evaluation will pass.</li>
+   <li>Dict: evaluate whether key-value pairs match with their configured values in the dict. The way to evaluate wit a list is if the derived key-value paris all match will their corresponding values in the dict, the evaluation will pass.
+    <ul>
+     <li>The syntax of a dict is json. e.g. {"LA1":10000, "LA2":30000}</li>
+     <li>Dict can be combined with range, e.g. {"LA1":"range(,0.1)", "LA2":"range(0.1,0.2)"}. This is useful when checking some metrics releated to group keys, like distinct value ratio.
+    </ul>
+   </li>
+   <li>Dict: same syntax as json. e.g. {"LA1":30000, "PBE1":1000}l </li>
    <li>Dict: same syntax as json. e.g. {"LA1":30000, "PBE1":1000} </li>
   </ol>
  </li>
