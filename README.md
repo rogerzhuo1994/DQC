@@ -6,12 +6,12 @@ There are many definitions about data quality in the Internet. An important comm
 DQC is a plugin atop Apache Airflow that provides web GUI that allow data professionals to configure profile items on datasets and the reasonable values to compare with. To make the checks happen, DQC provides a sensor class, which can be embedded into a DAG, to read a specific configuration and then poke a databricks job to generate queries, execute queries to get the profile values and compare the values with the configured reasonable values. If the derived values do not match with the configured reasonable values, the databricks job will fail and the sensor embedded in the DAG will fail. Then the downstream DAG nodes will not be executed in order to avoid bad data enter into systems. 
  
 # User Guide 
-1. Create DQC Job 
-ID: Globally unique ID of the job. Will be used in future configuration in DQC sensors. The sensor will use the configured job ID to find the detailed job configuration, e.g. profiles to check, reasonable values. 
-2. Create Dataset in DQC Job 
-2.1. Create Table Data Source 
-Table data sources are the data source that is directly a table or a certain partition of tables. Further configured evaluation rules must be performed on configured data sources.es. 
-Name: Alias of the dataset in this hob. Will be referred by the evaluation rules in this job. 
-Schema: Data warehouse schema of the target table 
-Table: Table name of the target table 
-Partition: Partitions of the data source. Configured as follows: 
+## Create DQC Job 
+1. ID: Globally unique ID of the job. Will be used in future configuration in DQC sensors. The sensor will use the configured job ID to find the detailed job configuration, e.g. profiles to check, reasonable values. 
+## Create Dataset in DQC Job 
+### Create Table Data Source 
+Table data sources are the data source that is directly a table or a certain partition of tables. Further configured evaluation rules must be performed on configured data sources. 
+1. Name: Alias of the dataset in this hob. Will be referred by the evaluation rules in this job. 
+2. Schema: Data warehouse schema of the target table 
+3. Table: Table name of the target table 
+4. Partition: Partitions of the data source. Configured as follows: 
