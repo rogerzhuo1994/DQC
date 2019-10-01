@@ -55,4 +55,20 @@ By configuring evaluation rules, certain metrics on a certain column of a previs
    <li>Distinct Value Count: number of distinct values of the column </li>
   </ol>
  </li>
- <li>Values</li>
+ <li>Values: reasonable values of the metric, can be numeric values, string, range, list, dict
+  <ol>
+   <li>String: e.g. "LA1", should be encapsulated with "". </li>
+   <li>Numeric values: it'll be better to written as a list containing only one element e.g. [0], [30000]</li>
+   <li>Range: the way to evaluate with a range is, if the derived value is not within the range, the evaluation will fail
+    <ul>
+     <li>with "=" means also contains equal case
+     <li>smaller than: e.g. range(,10) </li>
+     <li>smaller or equal than: e.g. range(,=10) </li>
+     <li>larger than: e.g. range(10,) </li>
+     <li>larger or equal than: e.g. range(=10,) </li>
+     <li>within a range: e.g. range(10,100), range(=10,=100)
+    </ul>
+   <li>List: e.g. ["LA1", "PBE1"], the way to evaluate with a list is </li>
+   <li>Dict: same syntax as json. e.g. {"LA1":30000, "PBE1":1000} </li>
+  </ol>
+ </li>
