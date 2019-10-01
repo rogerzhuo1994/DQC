@@ -34,4 +34,16 @@ Query data sources are the data source that are complicated and can only be quri
 1. Name: Alias of the data source  in this hob. Will be referred by the evaluation rules in this job. 
 2. Query: Query to get this data source. String value should to be encapsulated by '' not "".
 
-
+## Create Evaluation Rules in DQC Job
+By configuring evaluation rules, certain metrics on a certain column of a previsouly confugired data source will be derived, and then compared with configured values. If the derived metric values do not match the configured values, this evaluation rule will fail. 
+1. Data Source: name of a configured data source in this job. 
+2. Column: column to be evaluated, must be in the data source.
+3. Metric: type of metric to be evaluated. Now we have 8 supported metrics:
+3.1 Row Count
+3.2 Null Value Count: row count that has a null value on the column
+3.3 Null Value Ratio
+3.4 Empty Value Count: row count that has a '' value on the column, only for string column
+3.5 Empty Value Ratio
+3.6 Distinct Value: distinct values of the column, must be evaluated with list values
+3.7 Distinct Value Count: number of distinct values of the column
+4. Values
