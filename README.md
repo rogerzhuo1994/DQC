@@ -81,19 +81,31 @@ By configuring evaluation rules, certain metrics on a certain column of a previs
 </ol>
 
 ## Embed DQC Job into DAG
-After finishing the DQC job configuration, the DQC job can be embedded into a DAG via adding a specific DQC sensor. The sensor has a argument for which DQC job to embed (DQC job ID). The sensor instance will connect to the RDS instance to get configurations according to the DQC job ID.
+After finishing the DQC job configuration, the DQC job can be embedded into a DAG via adding a specific DQC sensor. The sensor has a argument(job_id) for which DQC job to embed. The sensor instance will connect to the RDS instance to get configurations according to the DQC job ID.
 
 # Design
+## File Structure
+--data_quality
+ |
+ |--templates // Jinja2 template folder for frontend
+ |  |--data_quality_center.html // Webpage for listing current user's DQC jobs and creating new DQC jobs
+ |  |--data_quality_job.html // Webpage for configuring data sources and evaluation rules o a DQC job
+ |
+ |--dao.py // Analyze configurations in user's requests and interact with ORM models to perform database CRUD
+ |--data_quality.py // Flask services to answer requests from users
+ |--db.py // ORM(Sqlachemy) models to interact with database
+
 ## Airflow Plugin
 The entire module of DQC relies on the plugin functionality of Airflow. 
 
 ## Frontend
-Frontend of DQC is written using Jinja2 and JQuery, same as Airflow. The frontend of DQC is responsible for providing a configuration webpage of DQC jobs and sending the configuration to backend. 
+Frontend of DQC is written using Jinja2 and JQuery, same as Airflow. The frontend of DQC is responsible for providing a configuration webpage of DQC jobs and sending the configuration to backend. For more details about frontend, please see the frontend code.
 
 ## Backend
 Backend of DQC is written using Flask.
 
 ## Database
 The database being used is the RDS instance for storing the service level data of Airflow. For more details about the instance , please ask Israel. 
+
 
 ## Databricks Spark Code
