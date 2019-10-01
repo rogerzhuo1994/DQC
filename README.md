@@ -68,6 +68,7 @@ By configuring evaluation rules, certain metrics on a certain column of a previs
      <li>larger or equal than: e.g. range(=10,) </li>
      <li>within a range: e.g. range(10,100), range(=10,=100)
     </ul>
+   </li>
    <li>List: evaluate whether values is in a list e.g. ["LA1", "PBE1"]. The way to evaluate with a list is if the derived values are all in the list, the evaluation will pass.</li>
    <li>Dict: evaluate whether key-value pairs match with their configured values in the dict. The way to evaluate wit a list is if the derived key-value paris all match will their corresponding values in the dict, the evaluation will pass.
     <ul>
@@ -75,10 +76,10 @@ By configuring evaluation rules, certain metrics on a certain column of a previs
      <li>Dict can be combined with range, e.g. {"LA1":"range(,0.1)", "LA2":"range(0.1,0.2)"}. This is useful when checking some metrics releated to group keys, like distinct value ratio.
     </ul>
    </li>
-   <li>Dict: same syntax as json. e.g. {"LA1":30000, "PBE1":1000} </li>
-   <li>Dict: same syntax as json. e.g. {"LA1":30000, "PBE1":1000} </li>
   </ol>
  </li>
 </ol>
 
 ## Embed DQC Job into DAG
+After finishing the DQC job configuration, the DQC job can be embedded into a DAG via adding a specific DQC sensor. The sensor has a argument for which DQC job to embed. 
+
