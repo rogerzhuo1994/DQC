@@ -31,8 +31,10 @@ dt:'2019-08-20'
 
 ### Create Query in DQC Job 
 Query data sources are the data source that are complicated and can only be quried through a query, like with joins, unions, multiple selections etc. Further configured evaluation rules must be performed on configured data sources. 
-1. Name: Alias of the data source  in this hob. Will be referred by the evaluation rules in this job. 
-2. Query: Query to get this data source. String value should to be encapsulated by '' not "".
+<ol>
+<li>Name: Alias of the data source  in this hob. Will be referred by the evaluation rules in this job. </li>
+<li>Query: Query to get this data source. String value should to be encapsulated by '' not "".</li>
+</ol>
 
 ## Create Evaluation Rules in DQC Job
 By configuring evaluation rules, certain metrics on a certain column of a previsouly confugired data source will be derived, and then compared with configured values. If the derived metric values do not match the configured values, this evaluation rule will fail. 
