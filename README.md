@@ -81,5 +81,19 @@ By configuring evaluation rules, certain metrics on a certain column of a previs
 </ol>
 
 ## Embed DQC Job into DAG
-After finishing the DQC job configuration, the DQC job can be embedded into a DAG via adding a specific DQC sensor. The sensor has a argument for which DQC job to embed. 
+After finishing the DQC job configuration, the DQC job can be embedded into a DAG via adding a specific DQC sensor. The sensor has a argument for which DQC job to embed (DQC job ID). The sensor instance will connect to the RDS instance to get configurations according to the DQC job ID.
 
+# Design
+## Airflow Plugin
+The entire module of DQC relies on the plugin functionality of Airflow. 
+
+## Frontend
+Frontend of DQC is written using Jinja2 and JQuery, same as Airflow. The frontend of DQC is responsible for providing a configuration webpage of DQC jobs and sending the configuration to backend. 
+
+## Backend
+Backend of DQC is written using Flask.
+
+## Database
+The database being used is the RDS instance for storing the service level data of Airflow. For more details about the instance , please ask Israel. 
+
+## Databricks Spark Code
