@@ -8,10 +8,10 @@ DQC is a plugin atop Apache Airflow that provides web GUI that allow data profes
 # User Guide 
 ## Create DQC Job 
 1. ID: Globally unique ID of the job. Will be used in future configuration in DQC sensors. DQC sensors will use the configured job ID to find the detailed job configuration, e.g. profiles to check, reasonable values. 
-## Create Dataset in DQC Job 
+## Create Data Source in DQC Job 
 ### Create Table Data Source 
 Table data sources are the data source that is directly a table or a certain partition of tables. Further configured evaluation rules must be performed on configured data sources. 
-1. Name: Alias of the dataset in this hob. Will be referred by the evaluation rules in this job. 
+1. Name: Alias of the data source in this hob. Will be referred by the evaluation rules in this job. 
 2. Schema: Data warehouse schema of the target table 
 3. Table: Table name of the target table 
 4. Partition: Optional. Partitions of the data source. Configured as follows:
@@ -28,3 +28,10 @@ dt:dt
 env:'LA1'
 dt:'2019-08-20'
 ```
+
+### Create Query in DQC Job 
+Query data sources are the data source that are complicated and can only be quried through a query, like with joins, unions, multiple selections etc. Further configured evaluation rules must be performed on configured data sources. 
+1. Name: Alias of the data source  in this hob. Will be referred by the evaluation rules in this job. 
+2. Query: Query to get this data source. String value should to be encapsulated by '' not "".
+
+
