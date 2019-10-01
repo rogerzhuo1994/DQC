@@ -32,7 +32,7 @@ env:'LA1'
 dt:'2019-08-20'
 ```
 
-### Create Query in DQC Job 
+### Create Query Data Source
 Query data sources are the data source that are complicated and can only be quried through a query, like with joins, unions, multiple selections etc. Further configured evaluation rules must be performed on configured data sources. 
 <ol>
 <li>Name: Alias of the data source  in this hob. Will be referred by the evaluation rules in this job. </li>
@@ -75,7 +75,10 @@ By configuring evaluation rules, certain metrics on a certain column of a previs
      <li>Dict can be combined with range, e.g. {"LA1":"range(,0.1)", "LA2":"range(0.1,0.2)"}. This is useful when checking some metrics releated to group keys, like distinct value ratio.
     </ul>
    </li>
-   <li>Dict: same syntax as json. e.g. {"LA1":30000, "PBE1":1000}l </li>
+   <li>Dict: same syntax as json. e.g. {"LA1":30000, "PBE1":1000} </li>
    <li>Dict: same syntax as json. e.g. {"LA1":30000, "PBE1":1000} </li>
   </ol>
  </li>
+</ol>
+
+## Embed DQC Job into DAG
