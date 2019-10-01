@@ -17,6 +17,7 @@ Table data sources are the data source that is directly a table or a certain par
  <li>Table: Table name of the target table </li>
  <li>Partition: Optional. Partitions of the data source. Configured as follows: </li>
 </ol>
+
 ```
 # One partition column per line:
 
