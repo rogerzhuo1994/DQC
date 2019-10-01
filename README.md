@@ -14,7 +14,7 @@ Table data sources are the data source that is directly a table or a certain par
 1. Name: Alias of the dataset in this hob. Will be referred by the evaluation rules in this job. 
 2. Schema: Data warehouse schema of the target table 
 3. Table: Table name of the target table 
-4. Partition: Partitions of the data source. Configured as follows:
+4. Partition: Optional. Partitions of the data source. Configured as follows:
 ```
 # One partition column per line:
 
@@ -23,5 +23,8 @@ Table data sources are the data source that is directly a table or a certain par
 env:env
 dt:dt
 
-# 
+# For static values, partition_column:value
+# String value should to be encapsulated by '', numeric values should not.
+env:'LA1'
+dt:'2019-08-20'
 ```
