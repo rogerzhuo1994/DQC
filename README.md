@@ -11,10 +11,12 @@ DQC is a plugin atop Apache Airflow that provides web GUI that allow data profes
 ## Create Data Source in DQC Job 
 ### Create Table Data Source 
 Table data sources are the data source that is directly a table or a certain partition of tables. Further configured evaluation rules must be performed on configured data sources. 
-1. Name: Alias of the data source in this hob. Will be referred by the evaluation rules in this job. 
-2. Schema: Data warehouse schema of the target table 
-3. Table: Table name of the target table 
-4. Partition: Optional. Partitions of the data source. Configured as follows:
+<ol>
+ <li>Name: Alias of the data source in this hob. Will be referred by the evaluation rules in this job. </li>
+ <li>Schema: Data warehouse schema of the target table </li>
+ <li>Table: Table name of the target table </li>
+ <li>Partition: Optional. Partitions of the data source. Configured as follows: </li>
+</ol>
 ```
 # One partition column per line:
 
