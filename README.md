@@ -85,15 +85,15 @@ After finishing the DQC job configuration, the DQC job can be embedded into a DA
 
 # Design
 ## File Structure
---data_quality
- |
- |--templates // Jinja2 template folder for frontend
- |  |--data_quality_center.html // Webpage for listing current user's DQC jobs and creating new DQC jobs
- |  |--data_quality_job.html // Webpage for configuring data sources and evaluation rules o a DQC job
- |
- |--dao.py // Analyze configurations in user's requests and interact with ORM models to perform database CRUD
- |--data_quality.py // Flask services to answer requests from users
- |--db.py // ORM(Sqlachemy) models to interact with database
+--data_quality <br>
+ | <br>
+ |--templates // Jinja2 template folder for frontend <br>
+ |  |--data_quality_center.html // Webpage for listing current user's DQC jobs and creating new DQC jobs <br>
+ |  |--data_quality_job.html // Webpage for configuring data sources and evaluation rules o a DQC job <br>
+ | <br>
+ |--dao.py // Analyze configurations in user's requests and interact with ORM models to perform database CRUD <br>
+ |--data_quality.py // Flask services to answer requests from users <br>
+ |--db.py // ORM(Sqlachemy) models to interact with database <br>
 
 ## Airflow Plugin
 The entire module of DQC relies on the plugin functionality of Airflow. 
