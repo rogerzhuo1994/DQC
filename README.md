@@ -41,14 +41,18 @@ Query data sources are the data source that are complicated and can only be quri
 
 ## Create Evaluation Rules in DQC Job
 By configuring evaluation rules, certain metrics on a certain column of a previsouly confugired data source will be derived, and then compared with configured values. If the derived metric values do not match the configured values, this evaluation rule will fail. 
-1. Data Source: name of a configured data source in this job. 
-2. Column: column to be evaluated, must be in the data source.
-3. Metric: type of metric to be evaluated. Now we have 8 supported metrics:
-3.1. Row Count
-3.2. Null Value Count: row count that has a null value on the column
-3.3. Null Value Ratio
-3.4. Empty Value Count: row count that has a '' value on the column, only for string column
-3.5. Empty Value Ratio
-3.6. Distinct Value: distinct values of the column, must be evaluated with list values
-3.7. Distinct Value Count: number of distinct values of the column
-4. Values
+<ol>
+ <li>Data Source: name of a configured data source in this job. </li>
+ <li>Column: column to be evaluated, must be in the data source. </li>
+ <li>Metric: type of metric to be evaluated. Now we have 8 supported metrics:
+  <ol>
+   <li>Row Count</li>
+   <li>Null Value Count: row count that has a null value on the column </li>
+   <li>Null Value Ratio </li>
+   <li>Empty Value Count: row count that has a '' value on the column, only for string column </li>
+   <li>Empty Value Ratio </li>
+   <li>Distinct Value: distinct values of the column, must be evaluated with list values </li>
+   <li>Distinct Value Count: number of distinct values of the column </li>
+  </ol>
+ </li>
+ <li>Values</li>
