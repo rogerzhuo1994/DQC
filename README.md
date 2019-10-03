@@ -105,6 +105,12 @@ Frontend of DQC is written using Jinja2 and JQuery, same as Airflow. The fronten
 
 ## Backend
 Backend of DQC is written using Flask.
+<ol>
+ <li>data_quality.py: specifies Flask service to answer request from users.</li>
+ <li>dao.py: analyzes dqc job configurations in user's requests and interact with ORM models to perform database CRUD.</li>
+ <li>db.py: specifies ORM(Sqlachemy) models to interact with database. </li>
+</ol>
+
 
 ## Database
 The database being used is the RDS instance for storing the service level data of Airflow. For more details about the instance , please ask Israel. 
