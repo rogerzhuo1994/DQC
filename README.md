@@ -108,6 +108,19 @@ Backend of DQC is written using Flask.
 
 ## Database
 The database being used is the RDS instance for storing the service level data of Airflow. For more details about the instance , please ask Israel. 
+### Tables
+<ol>
+ <li>dqc_job: store information of dqc job</li>
+ <li>dqc_data_source: store information of jobs' data sources</li>
+ <li>dqc_evaluation_rule: stroe information jobs' evaluation rules</li>
+</ol>
+
+## Airflow Sensor
+The sensor will read the configured dqc job information from the database, and poke a specific databricks job, hard-coded in the sensor class, and pass the job information to the databricks job in json. 
+
+## Databricks Job
+The databricks job will be kicked up by the dqc sensor with json parameters.
+For configured dqc data sources, the databricks job will create temporary views with the name and query. Thus, following metric querying can refer to the view via name.
+For evaluation rules, the databricks job will concat queries to perform metric querying, and compare the result with the configured values. If any metric does not match, the databricks job will exit with 1.
 
 
-## Databricks Spark Code
